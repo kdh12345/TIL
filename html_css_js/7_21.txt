@@ -1,0 +1,16 @@
+- 용어 정리
+네트워크 – 집 모든 컴퓨팅 도구 연결
+              학교나 사무실 건물 내부 모든 컴퓨팅 도구 연결
+집이랑 건물 연결 ===> 인터넷
+
+약속 표준 프로토콜 – 컴퓨터 통신 언어
+1> 이미지+동영상+텍스트--> 텍스트 이상 표현
+2> 클릭 --> 다른 내용 추가 더 많이 표현
+3> world wide web -> www --> web --> http
+hyper text 표현 프로토콜 --> http
+인터넷 클라이언트/서버 컴퓨터 --> http
+http://서버주소:port
+ http://localhost:8080
+html5 
+HTML – HYPER TEXT MARKUP LANGUAGE( 변수 , 조건문, 반복문, 클래스 , db x)
+http  서버 클라이언트 표현 언어
