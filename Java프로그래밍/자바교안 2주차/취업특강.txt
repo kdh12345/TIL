@@ -1,0 +1,10 @@
+1. Coursera
+2. edx - 하버드 강의
+3. cs50
+https://www.edx.org/professional-certificate/harvardx-computer-science-for-web-programming
+4. codecademy
+5. codeAvengers
+6. Team Treehouse
+
+프로젝트 시작전에 반드시 데이터를 kaggle에서 먼저 찾는다.
+https://github.com/ejolie/sookjae

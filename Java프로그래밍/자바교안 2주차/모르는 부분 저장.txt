@@ -1,0 +1,19 @@
+jdk 1.8 이상 인터페이스 문법 추가(jdk 11)
+- 구현된 메소드 없다.
+
+interface I1{
+   void ma(); // 필수 재정의
+   default void mb(){ s.o.p("I1 상속 모든 하위클래스들은 공통 구현 / 선택 재정의 "); }
+   static void mc() { s.o.p("I1 상속 모든 하위클래스들은 공통 구현 ); }
+}
+
+class A implements I1 {
+ public void ma() { 오버라이딩(필수) }
+}
+
+class Test {
+ main
+ s.o.p(A.mc());
+ A a1 = new A();
+ a1.ma();
+ a1.mb();

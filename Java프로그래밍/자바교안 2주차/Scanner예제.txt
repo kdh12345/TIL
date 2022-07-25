@@ -1,0 +1,4 @@
+보조스트림 - Scanner가 수행가능
+Scanner sc = new Scanner(System.in);
+Scanner sc = new Scanner(new FileInputStream("") );
+Scanner sc = new Scanner(new FileReader("") );
