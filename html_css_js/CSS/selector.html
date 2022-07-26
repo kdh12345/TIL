@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* h1 {color:gray;} */
+/* #special {color:skyblue;} */
+/* .target{ color:blue;} */
+/* * {color:blue}*/
+/* body{color:red}*/
+/* h6, a {color:red;} */
+/* h1 > a {color:red;} /* h1 밑에 a태그 부분만 변경(후손태그 포함x)*/
+/* body a {color:red;} /*후손 태그 포함*/
+/* a[href="http://www.multicampus.com"] {color:red;}*/
+/* a[href *= co] {color:red;}/*href에 co 포함한것*/
+/* a[href ^= kakao] {color:red;}/*kakao로 시작하는 것*/
+/* a[href $= kr] {color:red;}/*kr로 끝나는 것*/
+/*h1.target {color:blue;}  h1 태그 이고 class 속성이 target 인 태그*/
+/* h1[title *= 제목] {color:green;} /* h1 title 속성에 제목 포함 태그*/
+tr:first-child {color:green;}
+tr:last-child {color:green;}
+tr:nth-child(2n) {color:green;} /*짝수행*/
+tr:nth-child(2n+1) {color:blue;} /*홀수 행*/
+ul > li:nth-child(1) > a {color:red;}
+input:checked {color:blue;}
+select option:selected {color:blue;}
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--  <h1
+title ="정보보여주기"
+id="first"
+class="cls1"
+style="color:gray;">제목</h1> -->
+<h1 class="target" title="첫번째 제목을 나타내는 부분입니다">제목1</h1>
+<h3 class="target" >제목3</h3>
+<h6 class="target" >제목6</h6>
+
+<a href="HTTP://www.multicampus.com">멀티캠퍼스 이동</a><br>
+<a href="kakao.co.kr">카카오 이동</a><br>
+<a href="www.naver.co.kr">네이버 이동</a><br>
+<a href="www.amazone.com">아마존 이동</a><br>
+
+<h1><a href="http://www.google.com">구글 이동</a></h1>
+<h1>구글 이동</h1>
+<h1 id="special">id special제목</h1>
+
+<table border=3>
+<tr><td>1행1열</td><td>1행2열</td><td>1행3열</td></tr>
+<tr><td>2행1열</td><td>2행2열</td><td>2행3열</td></tr>
+<tr><td>3행1열</td><td>3행2열</td><td>3행3열</td></tr>
+<tr><td>4행1열</td><td>4행2열</td><td>4행3열</td></tr>
+<tr><td>5행1열</td><td>5행2열</td><td>5행3열</td></tr>
+</table>
+
+<ul>
+<li><a href="#">1아이템</a></li>
+<li><a href="#">2아이템</a></li>
+<li><a href="#">3아이템</a></li>
+</ul>
+
+
+</body>
+</html>
