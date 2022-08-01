@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>회원 가입 중 입니다.</h1>
+<h3>아이디 입력:&nbsp;
+<input type=text id="id_input">
+<input type=button id="btn_overlap_chk" value="중복확인">&nbsp;
+<input type=button id="btn_exit" value="새창닫기">
+
+</h3>
+<div id=id_test>java 는 사용 불가능합니다.</div>
+<h3>암호 입력:&nbsp;<input type=password id="pw_input"></h3>
+<h3>이름 입력:&nbsp;<input type=text id="name_input"></h3>
+<h3>폰번호:&nbsp;<input type=text id="phone_input"></h3>
+<form action="success.jsp">
+<input type=submit value="가입" id="join">
+</form>
+<script>
+	document.getElementById("join").onclick = function(){
+		var pw   = document.getElementById("pw_input").value;
+		var name = document.getElementById("name_input").value;
+		var temp = name.toUpperCase();
+		const regExp = /[a-zA-Z]/g;
+		var chk = true;
+		if(pw.length < 8 || pw.length > 10){
+			alert("암호를 8-10자리로 입력해주십시오");
+			chk = false;
+		}
+		if( name != temp && regExp.test(name) ){
+			alert("이름은 영문 대문자로만 입력되었는지 확인하십시오");
+			chk = false;
+		}
+		if(chk == true){
+			
+		}
+	}
+	var childWindow;
+	document.getElementById("btn_overlap_chk").onclick = function(){
+		childWindow = window.open("idcheck.html","new page","width=300, height=500, top=150, left=150, resizable=yes");
+		childWindow.onload = function(){
+			var id = document.getElementById("id_input").value;
+			if(id == 'java' || id == 'html' || id == 'script' || id == 'jsp' || id == 'servlet')
+			{
+				childWindow.document.getElementById("test").innerHTML=id+"아이디는 사용 불가능합니다.";
+				document.getElementById("id_test").innerHTML=id+"아이디는 사용 불가능합니다.";
+			}
+			else
+				childWindow.document.getElementById("test").innerHTML=id+"아이디는 사용 가능합니다.";
+		}
+	}
+	document.getElementById("btn_exit").onclick = function(){
+		window.close();
+		childWindow.close();
+	}
+</script>
+</body>
+</html>
