@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="num"> 100</h1>
+<h2 id="num_txt"> 글자 입력 가능합니다.</h2>
+<textarea rows='5' cols='50' id='txt'></textarea>
+<input type=button value='새로 입력' id='btn'>
+
+<script>
+var cnt = 0;
+document.querySelector("#txt").addEventListener('keydown',
+		function(e){
+			var number = document.getElementById("num").value;
+			if(cnt == 100){
+				e.preventDefault();
+				document.getElementById("txt").setAttribute("readonly");
+			}
+			if(e.keyCode != 8 && e.keyCode != 46 && e.keyCode != 37 && e.keyCode != 38 && e.keyCode != 39 && e.keyCode != 40 && e.keyCode != 16 ){ // backSpace, delete cnt--
+				cnt++;
+			}else if(e.keyCode == 8 || e.keyCode == 46){
+				cnt--;
+			}
+			document.getElementById("num").innerHTML = 100-cnt;
+			document.getElementById("num_txt").innerHTML = '글자 남았습니다.';
+		}, false);
+document.querySelector("#btn").addEventListener('click',function(e){
+	document.getElementById("txt").removeAttribute("readonly");
+	document.getElementById("txt").value = '';
+	document.getElementById("num").innerHTML = 100;
+	
+},false);
+</script>
+</body>
+</html>
