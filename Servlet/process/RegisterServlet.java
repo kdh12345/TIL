@@ -2,6 +2,7 @@ package process;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,10 +46,14 @@ public class RegisterServlet extends HttpServlet {
 				
 			}
 			out.println(" 과정을 선택하셨습니다. </h1>");
-		}
-				 //입력하신 id는 xxxx 입니다.
+		}				 //입력하신 id는 xxxx 입니다.
 		else
 			out.println("<h1>이름 혹은 과정을 입력하지 않았습니다. 확인부탁드립니다.</h1>");
+		Enumeration e = request.getParameterNames();
+		while(e.hasMoreElements()) {
+			out.println(e.nextElement());
+		}
+		
 	}
 
 }
