@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('form').on('submit',function(ev){
+		var su1 = $('#su1').val();
+		var su2 = $('#su2').val();
+		if( su1 == null || isNaN(su1) || su2 == null || isNaN(su2) ){
+			$('div').html('숫자만 입력하세요.');
+			ev.preventDefault();
+		}
+	});
+	
+	$('input:button').on('click', function(){
+		//버튼 클릭하면 submit 효과 동일 구현
+		//location.href="calc";
+		//$("form").attr("action", "변경url");
+		//$("form").attr("method", "get");
+		$("form").submit();
+	});
+});
+</script>
+</head>
+<body>
+<form action="calc" method="post">
+<input type=text name="su1" id="su1">
+<select name='op'>
+	<option>+</option>
+	<option>-</option>
+	<option>*</option>
+	<option>/</option>
+	<option>%</option>
+</select>
+<input type=text name="su2" id="su2">
+<input type=submit value="계산해주세요submit">
+<input type=button value="계산button">
+<div></div>
+
+<h3><a href="calc?su1=10&op=-&su2=10">서블릿으로 이동</a></h3>
+</form>
+</body>
+</html>
