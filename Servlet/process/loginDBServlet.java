@@ -8,11 +8,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.MemberDAO;
 
@@ -37,15 +39,20 @@ public class loginDBServlet extends HttpServlet {
 			
 			if(role.equals("admin")) {
 				output = id+" 계정의 관리자님 로그인하셨습니다 <br>";
-				output += "<ul><li> 모든 사용자 정보 조회</li>";
+				output += "<ul><li> <a href='memberlist'>모든 사용자 정보 조회 </a></li>";
 				output += "<li> 블랙리스트 관리 </li>";
 				output += "<li> 상품관리 </li></ul>";
 			}
 			else if(role.equals("user")){
 				output = id+" 계정의 사용자님 로그인하셨습니다";
 				output += "<ol><li> 내정보 조회</li>";
+				output += "<ol><li><a href='updatedb.html'> 내정보 수정</a></li>";
+				output += "<li> <a href='delete?id="+id+"&pw="+pw+"'>회원탈퇴</a></li>";
 				output += "<li> 로그아웃 </li>";
 				output += "<li> 게시판 보기 </li></ol>";
+				
+				HttpSession session = request.getSession();
+				session.setAttribute("user_id", id);
 			}
 		}
 		else if(condition == 1) { // id맞고 pw틀림
@@ -60,6 +67,8 @@ public class loginDBServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.println(output);
+		
+		//response.sendRedirect("http://127.0.0.1:8080/servlettest/calc.html");
 	}
 
 }
