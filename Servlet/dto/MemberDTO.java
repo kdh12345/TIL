@@ -44,4 +44,9 @@ public class MemberDTO {
 	public void setRegDate(String regDate) {
 		this.regDate = regDate;
 	}
+	@Override
+	public String toString() {
+		return id+" 회원님의 이름은"+name+", 폰번호는 "+phone+", "
+				+", 가입일은 "+ regDate+ " 입니다.";
+	}
 }
