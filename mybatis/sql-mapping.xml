@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member" >
+	
+	<select id="memberlist" resultType="mybatis.MemberDTO">
+		select * from members
+	</select>
+	
+	<select id="membercount" resultType="int">
+		select count(*) from members
+	</select>
+	
+	<select id="onemember" resultType="mybatis.MemberDTO" parameterType="String">
+		select * from members where id=#{id}
+	</select>
+	
+	<select id="paginglist" resultType="mybatis.MemberDTO" parameterType="int[]">
+		select * from members order by regdate limit 
+		<foreach collection="array" item="num" separator=",">
+		#{num}
+		</foreach>
+	</select>
+	
+	<!-- 
+	MemberMain
+	MemberDTO dto = new MemberDTO();
+	dto.setId("");
+	dto.setPassword(숫자);
+	dto.setName("");
+	dto.setPhone("");
+	dto.setEmail("");
+	2>service.registerMember(MemberDTO dto)
+	  List<MemberDTO> list = dao.oneMember(dto.getId());
+	  if(list == null || list.size() ==0){
+	  	dao.insertMember(dto);
+	  }
+	  3>dao.insertMember(MemberDTO dto){
+	  	session.insert("insertmember", dto);
+	  }
+	 -->
+	<insert id="insertmember" parameterType="mybatis.MemberDTO" >
+ 		insert into members values(#{id},#{password},#{name},#{phone},#{email},now()) 
+	</insert>
+
+</mapper>
+
