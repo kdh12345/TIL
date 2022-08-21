@@ -1,3 +1,9 @@
+# Ai 플랫폼을 활용한 웹 서비스 개발 교육 과정
+  - 교육기관 : 멀티캠퍼스
+  - 교육 언어 : Java, HTML5, CSS3, JavaScript, SQL
+  - 사용 기술 및 프레임워크 : Spring, Spring Boot, MyBatis, jQuery, Jsp
+  - 교육 기간 : 22.6.20 ~
+
 # Github 명령어
    - git init: 깃 초기화
    - git remote: 로컬 저장소에 원격 저장소를 등록, 조회, 삭제할 수 있는 명령어
