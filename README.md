@@ -2,7 +2,7 @@
   - 교육기관 : 멀티캠퍼스
   - 교육 언어 : Java, HTML5, CSS3, JavaScript, SQL
   - 사용 기술 및 프레임워크 : Spring, Spring Boot, MyBatis, jQuery, Jsp
-  - 교육 기간 : 22.6.20 ~
+  - 교육 기간 : 22.6.20 ~ 22.11.4
 
 # Github 명령어
    - git init: 깃 초기화
